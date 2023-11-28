@@ -34,14 +34,27 @@ export class HousingService {
   }
 
   async deleteHousingLocation(id: number): Promise<void> {
+    const housingLocation = await this.getHousingLocationById(id);
+  
+    if (!housingLocation) {
+      throw new Error('Housing location not found');
+    }
+  
+    housingLocation.isDeleted = true;
+  
     const response = await fetch(`${this.url}/${id}`, {
-      method: 'DELETE',
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(housingLocation),
     });
-
+  
     if (!response.ok) {
       throw new Error('Failed to delete housing location');
     }
   }
+  
 
 
   submitApplication(firstName: string, lastName: string, email: string) {

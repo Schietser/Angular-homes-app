@@ -35,14 +35,14 @@ export class HomeComponent {
   constructor(public dialog: MatDialog) {
     this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
       this.housingLocationList = housingLocationList;
-      this.filteredLocationList = housingLocationList;
+      this.filteredLocationList = housingLocationList.filter(
+        housingLocation => housingLocation.isDeleted !== true
+      );
     });
   }
 
   filteredResults(text: string) {
-    if (!text) this.filteredLocationList = this.housingLocationList.filter(
-      housingLocation => housingLocation.isDeleted === false
-    );
+    if (!text) this.filteredLocationList = this.housingLocationList;
 
     this.filteredLocationList = this.housingLocationList.filter(
       housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
