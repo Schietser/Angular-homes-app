@@ -15,14 +15,12 @@ import { MatDialog } from '@angular/material/dialog';
       <form>
         <input type="text" placeholder="Filter by city" #filter>
         <button class="primary" type="button" (click)="filteredResults(filter.value)">Search</button>
+        <button class="primary" type="button" style="float: right;" (click)="openNewLocationModal()">Add New Location</button>
       </form>
     </section>
     <section class="results">
       <app-housing-location *ngFor="let housingLocation of filteredLocationList"
       [housingLocation]="housingLocation"></app-housing-location>
-    </section>
-    <button class="primary" type="button" (click)="openNewLocationModal()">Add New Location</button>
-    <section>
     </section>
   `,
   styleUrls: ['./home.component.css']
