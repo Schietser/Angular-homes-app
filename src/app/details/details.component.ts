@@ -41,10 +41,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
           <button type="submit" class="primary">Apply now!</button>
         </form>
       </section>
-
-      <section>
-        <h2>Delete this housing location</h2>
-        <button type="submit" class="primary" (click)="deleteHousingLocation()">Delete housing</button>
+      <section style="padding-top: 3%;">
+        <button type="submit" class="primary" style="float: right;" (click)="deleteHousingLocation()">Delete housing</button>
       </section>
     </article>
   `,

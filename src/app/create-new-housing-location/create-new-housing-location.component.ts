@@ -10,29 +10,43 @@ import { ReactiveFormsModule } from '@angular/forms';
   standalone: true,
   imports: [ReactiveFormsModule],
   template: `
-    <section class="listing-apply">
+    <section class="listing-apply" style="padding: 10%;">
       <h2 class="section-heading">Create a new housing location</h2>
       <form [formGroup]="newLocationForm" (submit)="onSubmit()">
         <label for="name">Name</label>
+        <br>
         <input id="name" type="text" formControlName="name" required>
+        <br>
 
         <label for="city">City</label>
+        <br>
         <input id="city" type="text" formControlName="city" required>
+        <br>
 
         <label for="state">State</label>
+        <br>
         <input id="state" type="text" formControlName="state" required>
+        <br>
 
         <label for="photo">Photo</label>
+        <br>
         <input id="photo" type="text" formControlName="photo" required>
+        <br>
 
         <label for="availableUnits">Available Units</label>
+        <br>
         <input id="availableUnits" type="number" formControlName="availableUnits" required>
+        <br>
 
         <label for="wifi">Wifi</label>
+        <br>
         <input id="wifi" type="checkbox" formControlName="wifi">
+        <br>
 
         <label for="laundry">Laundry</label>
+        <br>
         <input id="laundry" type="checkbox" formControlName="laundry">
+        <br>
 
         <button type="submit" class="primary" (click)="closeDialog()">Create Location</button>
       </form>
@@ -76,5 +90,7 @@ export class CreateNewHousingLocationComponent implements OnInit {
 
   closeDialog() {
     this.dialogRef.close();
+    window.location.reload();
+    
   }
 }

@@ -22,6 +22,8 @@ export class HousingService {
   }
 
   async createHousingLocation(newLocation: HousingLocation): Promise<HousingLocation> {
+    newLocation.isDeleted = false;
+
     const response = await fetch(this.url, {
       method: 'POST',
       headers: {

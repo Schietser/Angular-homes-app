@@ -109,6 +109,17 @@
       "wifi": true,
       "laundry": true,
       "isDeleted": false
+    },
+    {
+      "name": "Luxury SoCal penthouse",
+      "city": "Los Angeles",
+      "state": "CA",
+      "photo": "/assets/treehouse.jpg",
+      "availableUnits": 1,
+      "wifi": false,
+      "laundry": false,
+      "isDeleted": false,
+      "id": 10
     }
   ]
 }

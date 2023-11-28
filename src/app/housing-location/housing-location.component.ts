@@ -8,7 +8,7 @@ import {RouterModule} from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <section class="listing">
+    <section class="listing" a [routerLink]="['/details', housingLocation.id]">
       <img class="listing-photo" [src]="housingLocation.photo" alt="Exterior photo of {{housingLocation.name}}">
       <h2 class="listing-head">{{housingLocation.name}}</h2>
       <p class="listing-location">{{housingLocation.city}}, {{housingLocation.state}}</p>
